@@ -1,0 +1,16 @@
+name: CI with Cache
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: prime-cache-03e81bc
+        uses: actions/cache@v4
+        with:
+          key: cache-03e81bc
+          path: ~/.cache  # Caches a dummy dir (works for demo)
